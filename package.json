@@ -6,6 +6,8 @@
   "scripts": {
     "dev": "parcel src/index.html",
     "build": "parcel build src/index.html",
+    "predeploy": "rm -rf dist && parcel build src/index.html --public-url https://mashablair.github.io/food-app-parcel/.",
+    "deploy": "gh-pages -d dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Maria Blair",
@@ -16,6 +18,7 @@
     "parcel-bundler": "^1.12.4"
   },
   "devDependencies": {
-    "cypress": "^5.3.0"
+    "cypress": "^5.3.0",
+    "gh-pages": "^3.1.0"
   }
 }
