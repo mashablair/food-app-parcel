@@ -1,9 +1,11 @@
-fetch("https://github.com/mashablair/body-love-food-app/blob/master/data.js")
-  .then((response) => response.json())
-  .then((response) => {
-    console.log(response);
-    console.log("https://github.com/mashablair/body-love-food-app/blob/master/data.js");
-  });
+// fetch("https://github.com/mashablair/body-love-food-app/blob/master/data.js")
+//   .then((response) => response.json())
+//   .then((response) => {
+//     console.log(response);
+//     console.log("https://github.com/mashablair/body-love-food-app/blob/master/data.js");
+//   });
+
+import data from "./data";
 
 const cards_container = document.querySelector("#cards");
 const message = document.querySelector("#filter_message");
