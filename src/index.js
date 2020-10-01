@@ -5,7 +5,9 @@
 //     console.log("https://github.com/mashablair/body-love-food-app/blob/master/data.js");
 //   });
 
-import data from "./data";
+import ingredients from "./data/ingredients";
+import cards from "./data/recipes";
+import shopping_list from "./data/shopping_list";
 
 const cards_container = document.querySelector("#cards");
 const message = document.querySelector("#filter_message");
@@ -23,7 +25,7 @@ function displayCards(arr) {
         .map(function (item) {
           var ready_to_cook = false;
           // see if it's ready to cook
-          if (checker(my_ingredients, item.ingredients)) {
+          if (checker(ingredients, item.ingredients)) {
             ready_to_cook = true;
           }
 
@@ -68,14 +70,14 @@ function displayIngredients(arr, idUL, idContainer) {
 
   document.querySelector(`#${idContainer}`).innerHTML = html;
 }
-displayIngredients(my_ingredients, "ingredUl", "ingredients");
+displayIngredients(ingredients, "ingredUl", "ingredients");
 
 function filterResults() {
   var result = [];
 
   cards.forEach(function (card) {
     // see if card is a match
-    if (checker(my_ingredients, card.ingredients)) {
+    if (checker(ingredients, card.ingredients)) {
       result.push(card);
     }
   });
@@ -138,9 +140,9 @@ document.addEventListener("click", function (e) {
     // find card in [cards]
     var card = cards.find((item) => item.num === e.target.dataset.num);
 
-    // we only need items that are not in 'my_ingredients'
+    // we only need items that are not in 'ingredients'
     card.ingredients.forEach(function (item) {
-      if (!my_ingredients.includes(item)) {
+      if (!ingredients.includes(item)) {
         shopping_list.push({
           ingredient: `${item}`,
           recipe: `${card.name}`,
@@ -183,9 +185,9 @@ document.addEventListener("click", function (e) {
       var card = cards.find((item) => item.num === e.target.dataset.num);
       var missing_items = [];
 
-      // we only need items that are not in 'my_ingredients'
+      // we only need items that are not in 'ingredients'
       card.ingredients.forEach(function (item) {
-        if (!my_ingredients.includes(item)) {
+        if (!ingredients.includes(item)) {
           missing_items.push(item);
         }
       });

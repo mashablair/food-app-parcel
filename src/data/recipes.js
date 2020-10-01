@@ -1,35 +1,10 @@
-var my_ingredients = [
-  "protein powder",
-  "avocado",
-  "chia",
-  "lemon",
-  "greens",
-  "cucumber",
-  "milk",
-  "ghee",
-  "garlic",
-  "shrimp",
-  "eggs",
-  "vinegar",
-  "canned fish",
-  "nuts",
-  "fish",
-  "hemp",
-  "turmeric",
-  "chicken",
-  "green powder",
-  "coconut milk",
-];
-
-let shopping_list = [];
-
 var cards = [
   {
     num: "1",
     name: "Spa Day Fab Four Smoothie",
     ingredients: ["protein powder", "avocado", "chia", "lemon", "greens", "cucumber", "milk"],
     category: "Breakfast",
-    img: "images/spa.png",
+    img: "./images/spa.png",
     page: 164,
     url: "https://kellyleveque.com/recent-posts/2015/11/15/spa-smoothie",
   },
@@ -106,3 +81,5 @@ var cards = [
     url: null,
   },
 ];
+
+export default cards;
