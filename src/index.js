@@ -8,6 +8,8 @@
 import ingredients from "./data/ingredients";
 import cards from "./data/recipes";
 import shopping_list from "./data/shopping_list";
+// import images from "./images/*.png";
+// import "./images/*.png";
 
 const cards_container = document.querySelector("#cards");
 const message = document.querySelector("#filter_message");
@@ -30,8 +32,12 @@ function displayCards(arr) {
           }
 
           return `<div class="card" style="width: 18rem;">
-                  <img src='${item.img ? item.img : "images/no_image.png"}' class="card-img-top" alt="..." style="height:220px">
-                  <img src="images/ready.png" aria-label="ready to cook" title="ready to cook" class='ready ${ready_to_cook ? "" : "d-none"} '>
+                  <img src='${
+                    item.img ? item.img : "https://res.cloudinary.com/djnvzdffx/image/upload/c_thumb,w_200,g_face/v1601678419/food-app/no_image_okp23a.png"
+                  }' class="card-img-top" style="height:220px" alt="">
+                  <img src="https://res.cloudinary.com/djnvzdffx/image/upload/c_thumb,w_200,g_face/v1601678423/food-app/ready_mlgzlo.png" aria-label="ready to cook" title="ready to cook" class='ready ${
+                    ready_to_cook ? "" : "d-none"
+                  } '>
                   <div class="card-body d-flex flex-column justify-content-end">
                     <span class="badge badge-light w-25 my-2">${item.category}</span>
                     <h3 class="card-title h5">${item.name}</h3>
